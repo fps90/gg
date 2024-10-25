@@ -9,6 +9,7 @@ def run_python():
     code = data.get("code", "")
 
     try:
+        # تشغيل كود Python المدخل
         result = subprocess.run(["python3", "-c", code], capture_output=True, text=True, timeout=5)
         output = result.stdout if result.returncode == 0 else result.stderr
     except Exception as e:
